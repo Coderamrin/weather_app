@@ -1,0 +1,1 @@
+fetch("http://api.openweathermap.org/data/2.5/weather?q=london&units=metric&appid=2aa31b1d167d0f8341bd55e8c2aba6ae",{mode:"cors"}).then((function(e){return e.json()})).then((function(e){console.log(e.wind.speed),console.log(e.main.temp),console.log(e.main.humidity)}));
