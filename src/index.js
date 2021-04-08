@@ -4,14 +4,37 @@ function getWeather(location, apikey ){
         return res.json(); 
     })
     .then(function(r) {
-        console.log(r.wind.speed);
-        console.log(r.main.temp);
-        console.log(r.main.humidity);
-    })
+        dom.temp.textContent = "Temperature:" + r.main.temp + " C";
+        dom.humidity.textContent = "Humidity:" + r.main.humidity + " %";
+        dom.wind.textContent = "Wind:" + r.wind.speed + " km/h";
+    });
 }
 
-let location = "london";
-let apikey = "2aa31b1d167d0f8341bd55e8c2aba6ae";
+let dom = (function () {
+    let cityname = document.querySelector(".cityName");
+    let search = document.querySelector(".search");
+    let temp = document.querySelector(".temp");
+    let humidity = document.querySelector(".humidity");
+    let wind = document.querySelector(".wind");
+    return {
+        cityname,
+        search,
+        temp,
+        humidity,
+        wind,
+    }
+})();
 
-getWeather(location, apikey);
+let apikey="2aa31b1d167d0f8341bd55e8c2aba6ae"; 
+function searchCb() {
+    let location = dom.cityname.value;
+    getWeather(location, apikey);
+}
+
+dom.search.addEventListener("click", searchCb);
+
+
+
+
+
  
