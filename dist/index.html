@@ -5,18 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>the weather app</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <form action="">
+        <div class="header">
+            <h1>Weather app</h1>
+        </div>
+        <div class="form">
             <input type="text" placeholder="Enter city name" class="cityName">
-        </form>
-        <button type="submit" class="search">Search</button>
+            <button type="submit" class="search">Search</button>
+        </div>
 
-        <div class="displayWeather">
-            <p class="temp"></p>
-            <p class="humidity"></p>
-            <p class="wind"></p>
+        <div class="displayWeather hide">
+            <div class="grid">
+                <p>Temparature:</p> 
+                <p class="temp item"></p> 
+            </div>
+            <div class="grid">
+                <p>Humidity:</p>
+                <p class="humidity item"></p>
+            </div>
+            <div class="grid">
+                <p>Wind:</p>
+                <p class="wind item"></p>
+            </div>
         </div>
     </div>
     <script src="main.js"></script>
