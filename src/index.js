@@ -1,5 +1,5 @@
 function getWeather(location, apikey ){
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${apikey}`, {mode:"cors"})
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${apikey}`, {mode:"cors"})
     .then(function(res) {
         return res.json(); 
     })
