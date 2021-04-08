@@ -17,6 +17,7 @@ let dom = (function () {
     let temp = document.querySelector(".temp");
     let humidity = document.querySelector(".humidity");
     let wind = document.querySelector(".wind");
+    let name = document.querySelector(".name");
     return {
         cityname,
         search,
@@ -24,6 +25,7 @@ let dom = (function () {
         humidity,
         wind,
         displayWeather,
+        name,
     }
 })();
 
@@ -35,6 +37,7 @@ function searchCb() {
 
     let location = dom.cityname.value;
     getWeather(location, apikey);
+    dom.name.textContent = dom.cityname.value;
     dom.displayWeather.classList.remove("hide"); 
     dom.cityname.value = "";
     dom.cityname.placeholder = "enter city name"
